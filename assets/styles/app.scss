@@ -1,3 +1,50 @@
+/* IMPORT AND FONTS */
+
+@import "vars";
+@import "~bootstrap/scss/bootstrap";
+
+/* GENERAL */
+
 body {
-    background-color: lightgray;
+    background-image: url("images/musicbg115.gif");
+ 
+    .main {
+        margin: 10px;
+        background-color: #8094AC;
+        border: 3px solid white;
+        color: white;
+    }
+
+    .title {
+        padding: 5px;
+        border-bottom: 3px solid white;
+        text-align: center;
+
+        h1 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 1rem;
+            font-style: italic;
+            font-weight: 400;
+        }
+    }
+
+    .menu {
+        background-color: black;
+    }
+
+    .objectif {
+        display: list-item;
+        list-style-image: url(images/chanteur.gif);
+        list-style-position: inside;
+        font-size: 0.7rem;
+    }
+
+    .content {
+        background-image: url("images/musicbg125.gif");
+        color: black;
+    }
 }

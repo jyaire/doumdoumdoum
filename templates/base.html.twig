@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Rencontres Chantantes{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -12,6 +13,30 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-8 main">
+                    <div class="row title">
+                        <h1>Les Rencontres Chantantes</h1>
+                        <h2>Des chants pour se rencontrer entre écoles</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 menu text-center">
+                            menu
+                        </div>
+                        <div class="col-9">
+                            <div class="row">
+                                <p class="objectif">Objectif du site : promouvoir le chant à l'école primaire, 
+                                à travers des rencontres en chansons, 
+                                grâce à l'apport de versions instrumentales...</p>
+                            </div>
+                            <div class="row content">
+                                {% block body %}{% endblock %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
