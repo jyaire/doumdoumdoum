@@ -19,32 +19,73 @@ body {
         padding: 5px;
         border-bottom: 3px solid white;
         text-align: center;
+    }
 
-        h1 {
-            font-size: 1.8rem;
-            text-transform: uppercase;
-        }
+    h1 {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+    }
 
-        h2 {
-            font-size: 1rem;
-            font-style: italic;
-            font-weight: 400;
-        }
+    h2 {
+        font-size: 1rem;
+        font-style: italic;
+        font-weight: 400;
+    }
+
+    h3 {
+        padding-top: 2px;
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #788196;
+    }
+
+    p {
+        font-size: 0.9rem;
     }
 
     .menu {
         background-color: black;
     }
 
-    .objectif {
-        display: list-item;
-        list-style-image: url(images/chanteur.gif);
-        list-style-position: inside;
-        font-size: 0.7rem;
-    }
-
     .content {
         background-image: url("images/musicbg125.gif");
         color: black;
     }
+
+    .footer {
+        padding-top: 1rem;
+        font-size: 0.7rem;
+        text-align: center;
+    }
+}
+
+/* ICONS */
+
+.objectif {
+    display: list-item;
+    list-style-image: url(images/chanteur.gif);
+    list-style-position: inside;
+    font-size: 0.7rem;
+}
+
+.search {
+    display: list-item;
+    list-style-image: url(images/730_search.gif);
+    list-style-position: inside;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.contact {
+    display: list-item;
+    list-style-image: url(images/730_email.gif);
+    list-style-position: inside;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.hr {
+    background-image:url(images/ymusi12.gif);
+    background-repeat: no-repeat;
+    background-position: center;
 }
