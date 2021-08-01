@@ -4,7 +4,7 @@
 
 {% block body %}
 <h3>Administration du site</h3>
-<p class="text-center">Il y a actuellement XX chants sur le site.</p>
+<p class="text-center">Il y a actuellement {{ songs | length }} chants sur le site.</p>
 <button type="button" class="btn btn-success">Ajouter un chant</button>
 {% if is_granted('ROLE_ADMIN') %}
     <p><a href="{{ path('app_logout') }}">Déconnexion</a></p>

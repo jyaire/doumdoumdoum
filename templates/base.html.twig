@@ -22,7 +22,11 @@
                     </div>
                     <div class="row">
                         <div class="col-3 menu text-center">
-                            <b>Année scolaire :</b>
+                            <p><b>Année scolaire :</b></p>
+                            <a href="{{ path('home') }}">Accueil</a>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <p><a href="{{ path('admin') }}">Administration</a></p>
+                            {% endif %}
                         </div>
                         <div class="col-9">
                             <div class="row">
