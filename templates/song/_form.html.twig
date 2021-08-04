@@ -1,4 +1,22 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+        {{ form_row(form.title, {
+            label: 'Titre'
+        }) }}
+        {{ form_row(form.author, {
+            label: 'Auteur(s)'
+        }) }}
+        {{ form_row(form.period, {
+            label: 'Année scolaire'
+        }) }}
+        {{ form_row(form.type, {
+            label: 'Type(s) de chant'
+        }) }}
+        {{ form_row(form.targets, {
+            label: 'Niveau(x) scolaire(s) adapté(s)'
+        }) }}
+        {{ form_row(form.lyrics, {
+            label: 'Paroles'
+        }) }}
+        
+    <button class="btn btn-success">{{ button_label|default('Ajouter') }}</button>
 {{ form_end(form) }}

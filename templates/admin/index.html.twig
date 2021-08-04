@@ -3,9 +3,11 @@
 {% block title %}Administration{% endblock %}
 
 {% block body %}
-<h3>Administration du site</h3>
+<h2>Administration du site</h2>
 <p class="text-center">Il y a actuellement {{ songs | length }} chants sur le site.</p>
-<button type="button" class="btn btn-success">Ajouter un chant</button>
+<p class="text-center"><a href="{{ path('song_new') }}">
+    <button type="button" class="btn btn-success">Ajouter un chant</button>
+</a></p>
 {% if is_granted('ROLE_ADMIN') %}
     <p><a href="{{ path('app_logout') }}">Déconnexion</a></p>
 {% endif %}

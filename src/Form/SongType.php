@@ -3,9 +3,12 @@
 namespace App\Form;
 
 use App\Entity\Song;
+use App\Entity\Target;
+use App\Entity\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class SongType extends AbstractType
 {
@@ -16,8 +19,20 @@ class SongType extends AbstractType
             ->add('author')
             ->add('period')
             ->add('lyrics')
-            ->add('type')
-            ->add('targets')
+            ->add('type', EntityType::class, [
+                'class' => Type::class,
+                'choice_label' => 'name',
+                'label' => 'Niveau',
+                'expanded' => true,
+                'multiple' => true,
+        ])
+            ->add('targets', EntityType::class, [
+                'class' => Target::class,
+                'choice_label' => 'name',
+                'label' => 'Période scolaire',
+                'expanded' => true,
+                'multiple' => true,
+        ])
         ;
     }
 
