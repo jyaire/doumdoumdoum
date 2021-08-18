@@ -1,38 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Song{% endblock %}
+{% block title %}{{ song.title }}{% endblock %}
 
 {% block body %}
-    <h1>Song</h1>
+    <p class="text-end p-2"><a href="{{ path('home') }}"><img src="{{ asset("/images/730_search.gif") }}" class="text-right" alt="Recherche"></a></p>
+    <p class="music">
+        <span "song-title">{{ song.title }}</span>
+        {% if (song.author != null) %}
+            <span "song-title">, de {{ song.author }}</span>
+        {% endif %}
+        {% if (song.targets != null) %}
+            {% for target in song.targets %}
+                <span "song-title"> ({{ target.name }})</span>
+            {% endfor %}
+        {% endif %}
+    </p>
+    <p></p>
+    <p>Répertoire {{ song.period }}</p>
+    <p>{{ song.lyrics }}</p>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ song.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ song.title }}</td>
-            </tr>
-            <tr>
-                <th>Author</th>
-                <td>{{ song.author }}</td>
-            </tr>
-            <tr>
-                <th>Period</th>
-                <td>{{ song.period }}</td>
-            </tr>
-            <tr>
-                <th>Lyrics</th>
-                <td>{{ song.lyrics }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <a href="{{ path('song_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('song_index') }}">back to list</a>
-
-    <a href="{{ path('song_edit', {'id': song.id}) }}">edit</a>
+    <a href="{{ path('song_edit', {'id': song.id}) }}">Modifier</a>
 
     {{ include('song/_delete_form.html.twig') }}
 {% endblock %}

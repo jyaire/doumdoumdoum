@@ -80,12 +80,25 @@ body {
     font-size: 0.7rem;
 }
 
+.music {
+    display: list-item;
+    list-style-image: url(images/730_music.gif);
+    list-style-position: inside;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
 .search {
     display: list-item;
     list-style-image: url(images/730_search.gif);
     list-style-position: inside;
     font-size: 0.9rem;
     text-align: center;
+}
+
+.search-small {
+    padding: 5rem;
+    text-align: right;
 }
 
 .contact {
