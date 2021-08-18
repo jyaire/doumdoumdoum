@@ -27,11 +27,11 @@ class Target
     /**
      * @ORM\ManyToMany(targetEntity=Song::class, inversedBy="targets")
      */
-    private $song;
+    private $songs;
 
     public function __construct()
     {
-        $this->song = new ArrayCollection();
+        $this->songs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -54,15 +54,15 @@ class Target
     /**
      * @return Collection|Song[]
      */
-    public function getSong(): Collection
+    public function getSongs(): Collection
     {
-        return $this->song;
+        return $this->songs;
     }
 
     public function addSong(Song $song): self
     {
-        if (!$this->song->contains($song)) {
-            $this->song[] = $song;
+        if (!$this->songs->contains($song)) {
+            $this->songs[] = $song;
         }
 
         return $this;
@@ -70,7 +70,7 @@ class Target
 
     public function removeSong(Song $song): self
     {
-        $this->song->removeElement($song);
+        $this->songs->removeElement($song);
 
         return $this;
     }

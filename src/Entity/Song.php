@@ -40,12 +40,12 @@ class Song
     private $lyrics;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Type::class, mappedBy="song")
+     * @ORM\ManyToMany(targetEntity=Type::class, mappedBy="songs")
      */
     private $types;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Target::class, mappedBy="song")
+     * @ORM\ManyToMany(targetEntity=Target::class, mappedBy="songs")
      */
     private $targets;
 

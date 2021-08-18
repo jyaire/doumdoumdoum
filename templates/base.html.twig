@@ -27,10 +27,11 @@
                                 {{ type.name }}
                             {% endfor %}
 
-                            <a href="{{ path('home') }}">Accueil</a>
+                            <p><a href="{{ path('home') }}">Accueil</a></p>
                             {% if is_granted('ROLE_ADMIN') %}
                                 <p><a href="{{ path('admin') }}">Administration</a></p>
                             {% endif %}
+                            <p><a href="{{ path('search') }}">Recherche</a></p>
                         </div>
                         <div class="col-9">
                             <div class="row">
