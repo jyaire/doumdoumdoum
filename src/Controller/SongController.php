@@ -30,6 +30,7 @@ class SongController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $data = $form->getData();
             $entityManager->persist($song);
             $entityManager->flush();
 

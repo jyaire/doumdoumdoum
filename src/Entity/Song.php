@@ -40,9 +40,9 @@ class Song
     private $lyrics;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Type::class, mappedBy="songs")
+     * @ORM\ManyToMany(targetEntity=Type::class, mappedBy="song")
      */
-    private $type;
+    private $types;
 
     /**
      * @ORM\ManyToMany(targetEntity=Target::class, mappedBy="song")
@@ -56,7 +56,7 @@ class Song
 
     public function __construct()
     {
-        $this->type = new ArrayCollection();
+        $this->types = new ArrayCollection();
         $this->targets = new ArrayCollection();
         $this->files = new ArrayCollection();
     }
@@ -117,15 +117,15 @@ class Song
     /**
      * @return Collection|Type[]
      */
-    public function getType(): Collection
+    public function getTypes(): Collection
     {
-        return $this->type;
+        return $this->types;
     }
 
     public function addType(Type $type): self
     {
-        if (!$this->type->contains($type)) {
-            $this->type[] = $type;
+        if (!$this->types->contains($type)) {
+            $this->types[] = $type;
             $type->addSong($this);
         }
 
@@ -134,7 +134,7 @@ class Song
 
     public function removeType(Type $type): self
     {
-        if ($this->type->removeElement($type)) {
+        if ($this->types->removeElement($type)) {
             $type->removeSong($this);
         }
 

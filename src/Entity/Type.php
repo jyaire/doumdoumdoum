@@ -25,13 +25,13 @@ class Type
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Song::class, inversedBy="type")
+     * @ORM\ManyToMany(targetEntity=Song::class, inversedBy="types")
      */
-    private $songs;
+    private $song;
 
     public function __construct()
     {
-        $this->songs = new ArrayCollection();
+        $this->song = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -54,15 +54,15 @@ class Type
     /**
      * @return Collection|Song[]
      */
-    public function getSongs(): Collection
+    public function getSong(): Collection
     {
-        return $this->songs;
+        return $this->song;
     }
 
     public function addSong(Song $song): self
     {
-        if (!$this->songs->contains($song)) {
-            $this->songs[] = $song;
+        if (!$this->song->contains($song)) {
+            $this->song[] = $song;
         }
 
         return $this;

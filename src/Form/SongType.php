@@ -19,7 +19,7 @@ class SongType extends AbstractType
             ->add('author')
             ->add('period')
             ->add('lyrics')
-            ->add('type', EntityType::class, [
+            ->add('types', EntityType::class, [
                 'class' => Type::class,
                 'choice_label' => 'name',
                 'label' => 'Niveau',
